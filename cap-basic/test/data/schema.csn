@@ -1,0 +1,79 @@
+{
+  "namespace": "com.sap.learning.db",
+  "definitions": {
+    "com.sap.learning.db.Authors": {
+      "kind": "entity",
+      "elements": {
+        "ID": {
+          "key": true,
+          "type": "cds.UUID"
+        },
+        "name": {
+          "type": "cds.String",
+          "length": 100
+        },
+        "dateOfBirth": {
+          "type": "cds.Date"
+        },
+        "dateOfDeath": {
+          "type": "cds.Date"
+        }
+      }
+    },
+    "com.sap.learning.db.Books": {
+      "kind": "entity",
+      "elements": {
+        "ID": {
+          "key": true,
+          "type": "cds.UUID"
+        },
+        "title": {
+          "type": "cds.String",
+          "length": 100
+        },
+        "stock": {
+          "type": "com.sap.learning.db.Stock"
+        },
+        "price": {
+          "type": "com.sap.learning.db.Price"
+        },
+        "genre": {
+          "type": "com.sap.learning.db.Genre"
+        }
+      }
+    },
+    "com.sap.learning.db.Stock": {
+      "kind": "type",
+      "type": "cds.Integer"
+    },
+    "com.sap.learning.db.Price": {
+      "kind": "type",
+      "elements": {
+        "amount": {
+          "type": "cds.Integer"
+        },
+        "currency": {
+          "type": "cds.String",
+          "length": 3
+        }
+      }
+    },
+    "com.sap.learning.db.Genre": {
+      "kind": "type",
+      "type": "cds.Integer",
+      "enum": {
+        "fiction": {
+          "val": 1
+        },
+        "non_fiction": {
+          "val": 2
+        }
+      }
+    }
+  },
+  "meta": {
+    "creator": "CDS Compiler v5.6.0",
+    "flavor": "inferred"
+  },
+  "$version": "2.0"
+}
