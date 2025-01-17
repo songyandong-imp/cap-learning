@@ -22,8 +22,7 @@
         "kind": "sqlite",
         "credentials": {
           "url": "./db/schema.db"
-        },
-        "schema_evolution": "auto"
+        }
       }
     }
   }

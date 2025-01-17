@@ -4,5 +4,6 @@ service AdminService@(path:'/admin') {
 
     entity Authors as projection on db.Authors ;
     entity Books as projection on db.Books;
+    entity Employees as projection on db.Employees;
 
 }
