@@ -1,0 +1,6 @@
+@baseUrl = http://localhost:4004
+
+GET {{baseUrl}}/admin/Employees HTTP/1.1
+
+###
+GET {{baseUrl}}/admin/Employees?$expand=dept&sap-locale=zh_CN HTTP/1.1

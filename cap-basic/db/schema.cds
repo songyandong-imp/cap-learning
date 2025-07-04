@@ -2,13 +2,19 @@ namespace com.sap.learning.db;
 
 using {
     cuid,
-    managed
+    managed,
+    sap.common.CodeList
 } from '@sap/cds/common';
 
 // localized data
 
 entity Employees : cuid {
     name:localized String(100);
+    dept : Association to Depts;
+}
+
+entity Depts : CodeList {
+    key code : Integer;
 }
 
 entity Authors : cuid, managed {
@@ -29,12 +35,14 @@ aspect Phones{
 }
 
 entity Books : cuid {
-    title  : String(100);
-    stock  : Stock;
+    title  : String(100) @mandatory;
+    stock  : Stock default 0;
     price  : Price;
     genre  : Genre;
     author : Association to Authors;
 }
+
+
 
 
 entity Orders : cuid {
